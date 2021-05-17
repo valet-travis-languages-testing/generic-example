@@ -1,0 +1,21 @@
+language: generic
+dist: xenial
+
+stages:
+  - name: stage_1
+  - name: stage_2
+
+install:
+  - make init
+  - make keys
+
+jobs:
+  include:
+    - stage: stage_1
+      os: linux
+      script:
+        - echo "Script has run!"
+    - stage: stage_2
+      os: linux
+      script:
+        - echo "Script has run!"
